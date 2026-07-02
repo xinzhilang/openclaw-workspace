@@ -1,0 +1,17 @@
+# OpenClaw internal
+.openclaw/
+openclaw-workspace-state.json
+HEARTBEAT.md
+
+# Private/personal
+memory/
+receipts/
+state/
+
+# Temp scripts
+fix_temp.ps1
+scan_*.ps1
+
+# OS files
+Thumbs.db
+.DS_Store
