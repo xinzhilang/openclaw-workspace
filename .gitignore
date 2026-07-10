@@ -1,0 +1,41 @@
+# OpenClaw gateway config (contains tokens/secrets)
+.openclaw/
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+logs/
+
+# Temp / dev artifacts
+*.pid
+*.log
+*.vbs
+*.bat
+*.ps1
+*.jpg
+*.png
+browser-extension-config.md
+browser-relay-config.json
+chrome-*.*
+relay-*.*
+test-*.*
+debug_*
+_tmp_*
+_cdp*
+_relay*
+_ocr*
+desktop_control_skill.py
+*.html
+
+# Transient state
+HEARTBEAT.md
+tabs.json
+openclaw_full_dialogue.txt
+
+# OS files
+Thumbs.db
+.DS_Store
