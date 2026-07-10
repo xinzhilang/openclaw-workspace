@@ -1,0 +1,16 @@
+[
+  {
+    "id": "main",
+    "model": "openrouter/tencent/hy3-preview:free"
+  },
+  {
+    "id": "grok-fast",
+    "model": "openrouter/x-ai/grok-4.1-fast",
+    "tools": {}
+  },
+  {
+    "id": "hy3",
+    "model": "openclaw/tencent/hy3-preview:free",
+    "tools": {}
+  }
+]

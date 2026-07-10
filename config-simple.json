@@ -1,0 +1,27 @@
+{
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "7e17a6cde70df52635e7fffe92375dda7693a45ae9d2288a"
+    }
+  },
+  "browser": {
+    "mode": "extension",
+    "profile": "chrome-relay-profile",
+    "port": 9222,
+    "relayPort": 18792,
+    "headless": false
+  },
+  "plugins": {
+    "allow": [
+      "browser",
+      "openclaw-weixin",
+      "telegram",
+      "feishu",
+      "tavily"
+    ]
+  }
+}

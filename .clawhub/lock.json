@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "skills": {
+    "skill-vetter": {
+      "version": "1.0.0",
+      "installedAt": 1774795561988
+    },
+    "openclaw-tavily-search": {
+      "version": "0.1.0",
+      "installedAt": 1774798984797
+    },
+    "xiucheng-self-improving-agent": {
+      "version": "1.0.0",
+      "installedAt": 1774799892652
+    },
+    "agent-browser-clawdbot": {
+      "version": "0.1.0",
+      "installedAt": 1774799914681
+    },
+    "find-skills-skill": {
+      "version": "1.0.0",
+      "installedAt": 1774799946742
+    },
+    "proactive-agent-lite": {
+      "version": "1.0.0",
+      "installedAt": 1774800971209
+    },
+    "ralph-evolver": {
+      "version": "1.0.6",
+      "installedAt": 1774801668779
+    },
+    "adaptive-reasoning": {
+      "version": "1.0.0",
+      "installedAt": 1774801760822
+    },
+    "shell": {
+      "version": "1.0.0",
+      "installedAt": 1774801913446
+    },
+    "claw-swarm": {
+      "version": "1.0.0",
+      "installedAt": 1774857578015
+    },
+    "memory-manager": {
+      "version": "1.0.0",
+      "installedAt": 1775391681121
+    },
+    "capability-evolver": {
+      "version": "1.41.0",
+      "installedAt": 1775392279393
+    },
+    "summarize-pro": {
+      "version": "1.0.0",
+      "installedAt": 1776671624328
+    },
+    "pdf-smart-tool-cn": {
+      "version": "1.1.0",
+      "installedAt": 1776672139410
+    },
+    "multi-search-engine-simple": {
+      "version": "1.0.0",
+      "installedAt": 1776678678894
+    },
+    "word-docx": {
+      "version": "1.0.2",
+      "installedAt": 1776994452911
+    }
+  }
+}

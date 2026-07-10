@@ -31,6 +31,12 @@ _ocr*
 desktop_control_skill.py
 *.html
 
+# Config / secrets (may contain API keys)
+*config*.json
+openclaw-config-fix.json
+clean_agents.json
+agents_backup_*.json
+
 # Transient state
 HEARTBEAT.md
 tabs.json
