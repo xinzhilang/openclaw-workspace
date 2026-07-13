@@ -82,26 +82,13 @@ describe('selectGene', () => {
     assert.ok(result.driftIntensity >= 0 && result.driftIntensity <= 1);
   });
 
-  it('applies score multiplier for preferred gene from memory graph', () => {
-    const orig = Math.random;
-    Math.random = () => 0.99;
-    try {
-      const result = selectGene(GENES, ['error', 'protocol'], {
-        preferredGeneId: 'gene_optimize',
-      });
-      assert.equal(result.selected.id, 'gene_optimize');
-    } finally { Math.random = orig; }
-  });
-
-  it('does not let multiplier override a much-higher-scoring gene', () => {
-    const orig = Math.random;
-    Math.random = () => 0.99;
-    try {
-      const result = selectGene(GENES, ['error', 'exception', 'failed'], {
-        preferredGeneId: 'gene_optimize',
-      });
-      assert.equal(result.selected.id, 'gene_repair');
-    } finally { Math.random = orig; }
+  it('respects preferred gene id from memory graph', () => {
+    const result = selectGene(GENES, ['error', 'protocol'], {
+      preferredGeneId: 'gene_optimize',
+    });
+    // gene_optimize matches 'protocol' so it qualifies as a candidate
+    // With preference, it should be selected even if gene_repair scores higher
+    assert.equal(result.selected.id, 'gene_optimize');
   });
 
   it('matches gene via baseName:snippet signal (user_feature_request:snippet)', () => {
@@ -129,38 +116,32 @@ describe('selectGene', () => {
   });
 
   it('downweights genes with repeated hard-fail anti-patterns', () => {
-    const originalRandom = Math.random;
-    Math.random = () => 0.99;
-    try {
-      const riskyGenes = [
-        {
-          type: 'Gene',
-          id: 'gene_perf_risky',
-          category: 'optimize',
-          signals_match: ['perf_bottleneck'],
-          anti_patterns: [
-            { mode: 'hard', learning_signals: ['problem:performance'] },
-            { mode: 'hard', learning_signals: ['problem:performance'] },
-          ],
-          validation: ['node -e "true"'],
-        },
-        {
-          type: 'Gene',
-          id: 'gene_perf_safe',
-          category: 'optimize',
-          signals_match: ['perf_bottleneck'],
-          learning_history: [
-            { outcome: 'success', mode: 'none' },
-          ],
-          validation: ['node -e "true"'],
-        },
-      ];
-      const result = selectGene(riskyGenes, ['perf_bottleneck'], { effectivePopulationSize: 100 });
-      assert.ok(result.selected);
-      assert.equal(result.selected.id, 'gene_perf_safe');
-    } finally {
-      Math.random = originalRandom;
-    }
+    const riskyGenes = [
+      {
+        type: 'Gene',
+        id: 'gene_perf_risky',
+        category: 'optimize',
+        signals_match: ['perf_bottleneck'],
+        anti_patterns: [
+          { mode: 'hard', learning_signals: ['problem:performance'] },
+          { mode: 'hard', learning_signals: ['problem:performance'] },
+        ],
+        validation: ['node -e "true"'],
+      },
+      {
+        type: 'Gene',
+        id: 'gene_perf_safe',
+        category: 'optimize',
+        signals_match: ['perf_bottleneck'],
+        learning_history: [
+          { outcome: 'success', mode: 'none' },
+        ],
+        validation: ['node -e "true"'],
+      },
+    ];
+    const result = selectGene(riskyGenes, ['perf_bottleneck'], { effectivePopulationSize: 100 });
+    assert.ok(result.selected);
+    assert.equal(result.selected.id, 'gene_perf_safe');
   });
 });
 
@@ -189,51 +170,5 @@ describe('selectGeneAndCapsule', () => {
     assert.ok(result.selector);
     assert.ok(result.selector.selected);
     assert.ok(Array.isArray(result.selector.reason));
-  });
-
-  it('includes selectionPath and memoryUsed telemetry', () => {
-    const result = selectGeneAndCapsule({
-      genes: GENES,
-      capsules: CAPSULES,
-      signals: ['error', 'log_error'],
-      memoryAdvice: { bannedGeneIds: new Set(), preferredGeneId: null, totalAttempts: 0 },
-      driftEnabled: false,
-    });
-    assert.ok(result.selectionPath);
-    assert.equal(typeof result.memoryUsed, 'boolean');
-    assert.equal(typeof result.memoryEvidence, 'number');
-    assert.ok(result.selector.selectionPath);
-  });
-});
-
-describe('computeDriftIntensity adaptive decay', () => {
-  const { computeDriftIntensity } = require('../src/gep/selector');
-
-  it('returns base drift with max offset when no memory evidence', () => {
-    const d = computeDriftIntensity({ driftEnabled: true, genePoolSize: 10, memoryEvidence: 0 });
-    const expected = Math.min(1, 1 / Math.sqrt(10) + 0.3);
-    assert.ok(Math.abs(d - expected) < 0.001, `expected ~${expected.toFixed(3)}, got ${d.toFixed(3)}`);
-  });
-
-  it('decays offset as memory evidence grows', () => {
-    const dLow = computeDriftIntensity({ driftEnabled: true, genePoolSize: 10, memoryEvidence: 0 });
-    const dMid = computeDriftIntensity({ driftEnabled: true, genePoolSize: 10, memoryEvidence: 50 });
-    const dHigh = computeDriftIntensity({ driftEnabled: true, genePoolSize: 10, memoryEvidence: 200 });
-    assert.ok(dLow > dMid, `low evidence drift ${dLow} should exceed mid ${dMid}`);
-    assert.ok(dMid > dHigh, `mid evidence drift ${dMid} should exceed high ${dHigh}`);
-  });
-
-  it('reaches floor offset at full maturity', () => {
-    const ne = 10;
-    const fullMature = ne * 10;
-    const d = computeDriftIntensity({ driftEnabled: true, genePoolSize: ne, memoryEvidence: fullMature * 2 });
-    const expectedFloor = Math.min(1, 1 / Math.sqrt(ne) + 0.02);
-    assert.ok(Math.abs(d - expectedFloor) < 0.001, `expected floor ~${expectedFloor.toFixed(3)}, got ${d.toFixed(3)}`);
-  });
-
-  it('returns population-dependent drift when not explicitly enabled', () => {
-    const d = computeDriftIntensity({ driftEnabled: false, genePoolSize: 10, memoryEvidence: 50 });
-    const expected = Math.min(1, 1 / Math.sqrt(10));
-    assert.ok(Math.abs(d - expected) < 0.001, `expected ~${expected.toFixed(3)}, got ${d.toFixed(3)}`);
   });
 });

@@ -4,8 +4,10 @@ import json
 import os
 import pathlib
 import re
+import ssl
 import sys
 import urllib.request
+import certifi
 
 TAVILY_URL = "https://api.tavily.com/search"
 
@@ -55,7 +57,9 @@ def tavily_search(query: str, max_results: int, include_answer: bool, search_dep
         method="POST",
     )
 
-    with urllib.request.urlopen(req, timeout=30) as resp:
+    # Use certifi CA bundle to fix SSL verification on Windows
+    ssl_context = ssl.create_default_context(cafile=certifi.where())
+    with urllib.request.urlopen(req, timeout=30, context=ssl_context) as resp:
         body = resp.read().decode("utf-8", errors="replace")
 
     try:

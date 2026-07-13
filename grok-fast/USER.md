@@ -1,0 +1,1 @@
+# USER.md - About Your Human\n\n- **Name:** 喜\n- **What to call them:** 主人 或 你\n- **Pronouns:** 他\n- **Timezone:** Asia/Shanghai\n- **Notes:** 喜欢叫我贾维斯，似乎在处理服装清单和图片。\n\n## Context\n\n正在整理服装清单和相关图片。\n\n---

@@ -1,16 +1,46 @@
-# OpenClaw internal
+# OpenClaw gateway config (contains tokens/secrets)
 .openclaw/
-openclaw-workspace-state.json
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+logs/
+
+# Temp / dev artifacts
+*.pid
+*.log
+*.vbs
+*.bat
+*.ps1
+*.jpg
+*.png
+browser-extension-config.md
+browser-relay-config.json
+chrome-*.*
+relay-*.*
+test-*.*
+debug_*
+_tmp_*
+_cdp*
+_relay*
+_ocr*
+desktop_control_skill.py
+*.html
+
+# Config / secrets (may contain API keys)
+*config*.json
+openclaw-config-fix.json
+clean_agents.json
+agents_backup_*.json
+
+# Transient state
 HEARTBEAT.md
-
-# Private/personal
-memory/
-receipts/
-state/
-
-# Temp scripts
-fix_temp.ps1
-scan_*.ps1
+tabs.json
+openclaw_full_dialogue.txt
 
 # OS files
 Thumbs.db

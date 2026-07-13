@@ -1,0 +1,1 @@
+{"query":"query FindScenes($filter: FindFilterType!) { findScenes(filter: $filter) { count scenes { id title details date } } }","variables":{"filter":{"q":"","sort":"date","direction":"DESC","per_page":200}}}

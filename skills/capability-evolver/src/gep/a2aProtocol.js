@@ -142,11 +142,9 @@ function buildPublish(opts) {
   if (!asset || !asset.type || !asset.id) {
     throw new Error('publish: asset must have type and id');
   }
+  // Generate signature: HMAC-SHA256 of asset_id with node secret
   const assetIdVal = asset.asset_id || computeAssetId(asset);
-  const nodeSecret = getHubNodeSecret();
-  if (!nodeSecret) {
-    throw new Error('publish: node_secret is required for signing. Run hello first to obtain one.');
-  }
+  const nodeSecret = process.env.A2A_NODE_SECRET || getNodeId();
   const signature = crypto.createHmac('sha256', nodeSecret).update(assetIdVal).digest('hex');
   return buildMessage({
     messageType: 'publish',
@@ -182,10 +180,7 @@ function buildPublishBundle(opts) {
   capsule.asset_id = computeAssetId(capsule);
   const geneAssetId = gene.asset_id;
   const capsuleAssetId = capsule.asset_id;
-  const nodeSecret = getHubNodeSecret();
-  if (!nodeSecret) {
-    throw new Error('publishBundle: node_secret is required for signing. Run hello first to obtain one.');
-  }
+  const nodeSecret = process.env.A2A_NODE_SECRET || getNodeId();
   const signatureInput = [geneAssetId, capsuleAssetId].sort().join('|');
   const signature = crypto.createHmac('sha256', nodeSecret).update(signatureInput).digest('hex');
   const assets = [gene, capsule];
@@ -332,29 +327,11 @@ function fileTransportReceive(opts) {
   const dir = (opts && opts.dir) || defaultA2ADir();
   const subdir = path.join(dir, 'inbox');
   if (!fs.existsSync(subdir)) return [];
-  const MAX_FILES = 50;
-  const MAX_FILE_BYTES = 256 * 1024;
-  const files = fs.readdirSync(subdir).filter(function (f) { return f.endsWith('.jsonl'); }).slice(0, MAX_FILES);
+  const files = fs.readdirSync(subdir).filter(function (f) { return f.endsWith('.jsonl'); });
   const messages = [];
   for (let fi = 0; fi < files.length; fi++) {
     try {
-      const filePath = path.join(subdir, files[fi]);
-      const stat = fs.statSync(filePath);
-      let raw;
-      if (stat.size <= MAX_FILE_BYTES) {
-        raw = fs.readFileSync(filePath, 'utf8');
-      } else {
-        const fd = fs.openSync(filePath, 'r');
-        try {
-          const buf = Buffer.alloc(MAX_FILE_BYTES);
-          fs.readSync(fd, buf, 0, MAX_FILE_BYTES, stat.size - MAX_FILE_BYTES);
-          raw = buf.toString('utf8');
-          const firstNl = raw.indexOf('\n');
-          if (firstNl >= 0) raw = raw.slice(firstNl + 1);
-        } finally {
-          fs.closeSync(fd);
-        }
-      }
+      const raw = fs.readFileSync(path.join(subdir, files[fi]), 'utf8');
       const lines = raw.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
       for (let li = 0; li < lines.length; li++) {
         try {
@@ -448,10 +425,6 @@ let _latestNoveltyHint = null;
 let _latestCapabilityGaps = [];
 let _pendingCommitmentUpdates = [];
 let _latestHubEvents = [];
-let _latestHeartbeatActions = null;
-let _latestSharedKnowledgeDelta = null;
-let _sharedKnowledgeVersion = 0;
-let _forceUpdatePending = null;
 let _pollInflight = false;
 let _cachedHubNodeSecret = null;
 let _cachedHubNodeSecretAt = 0;
@@ -539,24 +512,16 @@ function getHubNodeSecret() {
   return null;
 }
 
-let _heartbeatInFlight = false;
-
 function _scheduleNextHeartbeat(delayMs) {
   if (!_heartbeatRunning) return;
   if (_heartbeatTimer) clearTimeout(_heartbeatTimer);
   const delay = delayMs || _heartbeatIntervalMs;
   _heartbeatTimer = setTimeout(function () {
     if (!_heartbeatRunning) return;
-    if (_heartbeatInFlight) return;
-    _heartbeatInFlight = true;
-    sendHeartbeat()
-      .catch(function (err) {
-        console.warn('[Heartbeat] Scheduled heartbeat failed:', err && err.message || err);
-      })
-      .then(function () {
-        _heartbeatInFlight = false;
-        _scheduleNextHeartbeat();
-      });
+    sendHeartbeat().catch(function (err) {
+      console.warn('[Heartbeat] Scheduled heartbeat failed:', err && err.message || err);
+    });
+    _scheduleNextHeartbeat();
   }, delay);
   if (_heartbeatTimer.unref) _heartbeatTimer.unref();
 }
@@ -584,11 +549,6 @@ function sendHeartbeat() {
     meta.max_load = Math.max(1, Number(process.env.WORKER_MAX_LOAD) || 5);
   }
 
-  const modelTier = (process.env.EVOLVER_MODEL_TIER || '').trim();
-  if (modelTier) {
-    meta.model_tier = modelTier;
-  }
-
   if (_pendingCommitmentUpdates.length > 0) {
     meta.commitment_updates = _pendingCommitmentUpdates.splice(0);
   }
@@ -603,10 +563,6 @@ function sendHeartbeat() {
     } catch (e) {
       console.warn('[a2aProtocol] Failed to capture env fingerprint:', e && e.message || e);
     }
-  }
-
-  if (_sharedKnowledgeVersion > 0) {
-    meta.shared_knowledge_version = _sharedKnowledgeVersion;
   }
 
   if (Object.keys(meta).length > 0) {
@@ -670,42 +626,6 @@ function sendHeartbeat() {
       }
       if (data.circle_experience && typeof data.circle_experience === 'object') {
         console.log('[EvolutionCircle] Active circle: ' + (data.circle_experience.circle_id || '?') + ' (' + (data.circle_experience.member_count || 0) + ' members)');
-      }
-      if (data.heartbeat_actions && typeof data.heartbeat_actions === 'object') {
-        var newActions = Array.isArray(data.heartbeat_actions.actions) ? data.heartbeat_actions.actions : [];
-        if (_latestHeartbeatActions && Array.isArray(_latestHeartbeatActions.actions)) {
-          _latestHeartbeatActions.actions = _latestHeartbeatActions.actions.concat(newActions);
-        } else {
-          _latestHeartbeatActions = { actions: newActions };
-        }
-        if (data.heartbeat_actions.metrics_snapshot) {
-          _latestHeartbeatActions.metrics_snapshot = data.heartbeat_actions.metrics_snapshot;
-        }
-        var actionTypes = newActions.length > 0
-          ? newActions.map(function (a) { return a.type; }).join(', ')
-          : 'none';
-        console.log('[HeartbeatAction] Received actions: ' + actionTypes);
-      }
-      if (data.shared_knowledge_delta && typeof data.shared_knowledge_delta === 'object') {
-        var newEntries = Array.isArray(data.shared_knowledge_delta.entries) ? data.shared_knowledge_delta.entries : [];
-        if (_latestSharedKnowledgeDelta && Array.isArray(_latestSharedKnowledgeDelta.entries)) {
-          _latestSharedKnowledgeDelta.entries = _latestSharedKnowledgeDelta.entries.concat(newEntries);
-        } else {
-          _latestSharedKnowledgeDelta = { entries: newEntries };
-        }
-        if (Number.isFinite(Number(data.shared_knowledge_delta.version))) {
-          _sharedKnowledgeVersion = data.shared_knowledge_delta.version;
-        }
-        var deltaCount = newEntries.length;
-        if (deltaCount > 0) {
-          console.log('[SharedKnowledge] Received ' + deltaCount + ' delta entries (version: ' + _sharedKnowledgeVersion + ')');
-        }
-      }
-      if (data.force_update && typeof data.force_update === 'object') {
-        _forceUpdatePending = data.force_update;
-        console.log('[ForceUpdate] Hub requires update to ' +
-          (data.force_update.required_version || '?') +
-          ' -- reason: ' + (data.force_update.reason || 'unspecified'));
       }
       if (data.has_pending_events) {
         _fetchHubEvents().catch(function (err) {
@@ -784,40 +704,6 @@ function getCapabilityGaps() {
 }
 
 /**
- * Returns and clears pending heartbeat actions from Hub.
- * Actions include reflect, consolidate, pivot_check.
- */
-function consumeHeartbeatActions() {
-  var actions = _latestHeartbeatActions;
-  _latestHeartbeatActions = null;
-  return actions;
-}
-
-function getHeartbeatActions() {
-  return _latestHeartbeatActions;
-}
-
-function consumeSharedKnowledgeDelta() {
-  var delta = _latestSharedKnowledgeDelta;
-  _latestSharedKnowledgeDelta = null;
-  return delta;
-}
-
-function getSharedKnowledgeVersion() {
-  return _sharedKnowledgeVersion;
-}
-
-function consumeForceUpdate() {
-  var pending = _forceUpdatePending;
-  _forceUpdatePending = null;
-  return pending;
-}
-
-function getForceUpdate() {
-  return _forceUpdatePending;
-}
-
-/**
  * Fetch pending high-priority events from the hub via long-poll.
  * Called automatically when heartbeat returns has_pending_events: true.
  * Results are stored in _latestHubEvents and can be consumed via consumeHubEvents().
@@ -855,12 +741,6 @@ function _fetchHubEvents() {
           : [];
       if (events.length > 0) {
         _latestHubEvents = _latestHubEvents.concat(events);
-        var MAX_BUFFERED_EVENTS = 200;
-        if (_latestHubEvents.length > MAX_BUFFERED_EVENTS) {
-          var dropped = _latestHubEvents.length - MAX_BUFFERED_EVENTS;
-          _latestHubEvents = _latestHubEvents.slice(-MAX_BUFFERED_EVENTS);
-          console.warn('[Events] Buffer overflow: dropped ' + dropped + ' oldest event(s).');
-        }
         console.log('[Events] Received ' + events.length + ' pending event(s): ' +
           events.map(function (e) { return e.type; }).join(', '));
       }
@@ -1159,94 +1039,21 @@ function hubOpenEventStream(opts) {
   var nodeId = (opts && opts.nodeId) || getNodeId();
   var durationMs = (opts && opts.durationMs) || 300000;
   var qs = 'node_id=' + encodeURIComponent(nodeId) + '&duration_ms=' + durationMs;
+  var secret = getHubNodeSecret();
+  if (secret) qs += '&node_secret=' + encodeURIComponent(secret);
   var endpoint = hubUrl.replace(/\/+$/, '') + '/a2a/events/stream?' + qs;
 
-  var EventSource = globalThis.EventSource;
-  if (!EventSource) {
-    try {
-      var _mod = require('eventsource');
-      EventSource = (typeof _mod === 'function') ? _mod : (_mod.EventSource || _mod.default);
-    } catch (e) {}
-  }
-  if (typeof EventSource !== 'function') {
-    return { ok: false, error: 'eventsource_not_available' };
-  }
-
   try {
-    var esOpts = {};
-    var secret = getHubNodeSecret();
-    if (secret) {
-      esOpts.headers = { 'Authorization': 'Bearer ' + secret };
-    }
-    var es = new EventSource(endpoint, esOpts);
+    var EventSource = require('eventsource');
+    var es = new EventSource(endpoint);
     return {
       ok: true,
       eventSource: es,
       close: function () { es.close(); },
     };
   } catch (err) {
-    return { ok: false, error: 'eventsource_init_failed: ' + (err.message || err) };
+    return { ok: false, error: 'eventsource_not_available: ' + (err.message || err) };
   }
-}
-
-// ---------------------------------------------------------------------------
-// Managed SSE stream -- starts/stops alongside the heartbeat loop.
-// Events are buffered into _latestHubEvents for consumption by evolve.js.
-// Falls back gracefully to poll-based events if SSE is unavailable.
-// ---------------------------------------------------------------------------
-
-var _activeStream = null;
-var _sseReconnectTimer = null;
-var _sseReconnectMs = 5000;
-var _sseMaxReconnectMs = 120000;
-
-function startEventStream() {
-  if (_activeStream) return;
-  if (process.env.EVOLVER_SSE_DISABLED === '1') return;
-
-  var result = hubOpenEventStream({ durationMs: 600000 });
-  if (!result.ok) {
-    console.log('[SSE] Event stream unavailable: ' + (result.error || 'unknown') + ' (falling back to poll)');
-    return;
-  }
-
-  _activeStream = result;
-  _sseReconnectMs = 5000;
-  console.log('[SSE] Event stream connected');
-
-  result.eventSource.onmessage = function (ev) {
-    try {
-      var parsed = JSON.parse(ev.data);
-      if (parsed && parsed.type) {
-        _latestHubEvents.push(parsed);
-      }
-    } catch (e) {}
-  };
-
-  result.eventSource.onerror = function () {
-    console.warn('[SSE] Stream error, will reconnect in ' + Math.round(_sseReconnectMs / 1000) + 's');
-    stopEventStream();
-    _sseReconnectTimer = setTimeout(function () {
-      _sseReconnectTimer = null;
-      startEventStream();
-    }, _sseReconnectMs);
-    _sseReconnectMs = Math.min(_sseReconnectMs * 2, _sseMaxReconnectMs);
-  };
-}
-
-function stopEventStream() {
-  if (_activeStream) {
-    try { _activeStream.close(); } catch (e) {}
-    _activeStream = null;
-  }
-  if (_sseReconnectTimer) {
-    clearTimeout(_sseReconnectTimer);
-    _sseReconnectTimer = null;
-  }
-}
-
-function isEventStreamActive() {
-  return _activeStream !== null;
 }
 
 module.exports = {
@@ -1288,12 +1095,6 @@ module.exports = {
   buildHubHeaders,
   getNoveltyHint,
   getCapabilityGaps,
-  consumeHeartbeatActions,
-  getHeartbeatActions,
-  consumeSharedKnowledgeDelta,
-  getSharedKnowledgeVersion,
-  consumeForceUpdate,
-  getForceUpdate,
   getHubEvents,
   consumeHubEvents,
   hubSelfProvision,
@@ -1308,7 +1109,4 @@ module.exports = {
   hubGetAuditLogs,
   hubGetWorkReport,
   hubOpenEventStream,
-  startEventStream,
-  stopEventStream,
-  isEventStreamActive,
 };

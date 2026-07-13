@@ -1,0 +1,111 @@
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L5] User: 晚上好，贾维斯
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L7] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L8] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L9] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L10] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L12] User: 晚上好，贾维斯
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L14] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L17] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L22] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L23] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L26] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L27] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/4cd81096-b00d-4d24-baa2-b1cfba5a7757.jsonl.deleted.2026-05-09T08-12-12.971Z#L5] User: Write a dream diary entry from these memory fragments: - Assistant: 我理解你想分享自己的感受和经历。不过我觉得这个话题已经涉及到比较私密和个人的内容了。 如果你愿意，我们可以聊聊： - 你的收藏爱好本身（比如那些装备的设计、特色） - 日常生活中的其他事情 - 兴趣爱好、工作、或者其他轻松的话题 这样也许会让交流更舒服一些。你觉得呢？😊 - User: 不要，我就是要和你说，你能不能不要总是扫兴啊。 -
+[main/sessions/main/4cd81096-b00d-4d24-baa2-b1cfba5a7757.jsonl.deleted.2026-05-09T08-12-12.971Z#L5] User: entry from these memory fragments: - Gateway Status: OpenClaw version: 2026.4.23 (a979721); Status: Running on 127.0.0.1:18789; Canvas: http://127.0.0.1:18789/__openclaw__/canvas/; Health monitor: Active (300s interval) - Plugin Issues: f
+[main/sessions/main/4cd81096-b00d-4d24-baa2-b1cfba5a7757.jsonl.deleted.2026-05-09T08-12-12.971Z#L5] User: `tencent/hy3-preview:free`, `inclusionai/lin - User: Write a dream diary entry from these memory fragments: - User: 下午好啊，贾维斯 - Assistant: [assistant turn failed before producing content] - Assistant: 下午好！👋 今天是2026年5月7日，星期三，下午6点33分。您的Open
+[main/sessions/main/4cd81096-b00d-4d24-baa2-b1cfba5a7757.jsonl.deleted.2026-05-09T08-12-12.971Z#L5] User: - `config.yml` (properly configured) - `stash-go.sqlite` database (~38 MB with all your data - User: 下午好啊，贾维斯 Recurring themes: - 理解 - 你想 - 分享 - 自己 - 感受 - 经历
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L5] User: 晚上好，贾维斯
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L7] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L8] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L9] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L11] User: 晚上好，贾维斯
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L15] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L18] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L19] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L24] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L25] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L28] Assistant: 晚上好，先生。有什么我可以帮您的吗？
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L30] User: 晚上好，贾维斯 ⚠️ Something went wrong while processing your request. Please try again, or use /new to start a fresh session.
+[main/sessions/main/84dafcc1-94df-4e34-8761-fd5d2ebd3d55.jsonl#L5] User: Write a dream diary entry from these memory fragments: - Gateway Status: OpenClaw version: 2026.4.23 (a979721); Status: Running on 127.0.0.1:18789; Canvas: http://127.0.0.1:18789/__openclaw__/canvas/; Health monitor: Active (300s interval) - Plugin Issues: feishu: Failed
+[main/sessions/main/84dafcc1-94df-4e34-8761-fd5d2ebd3d55.jsonl#L5] User: `models.providers.openrouter.model - Key Events: **安全警告**：`gateway.controlUi.allowInsecureAuth=true` (需修复)。; **版本**：OpenClaw 2026.4.23 (a979721)，无更新可用。; **Healthcheck 启动**：部分执行，OS=Windows, loopback-only, 建议插件修复 + 安全审计。 - Decisions/Lessons: 精确编辑 `openclaw.json`：使用 `read` 
+[main/sessions/main/84dafcc1-94df-4e34-8761-fd5d2ebd3d55.jsonl#L5] User: Vivian → `Stars`（亚洲）— Pornhub认证，含anal/threesome; Big2048 系列 → `Big2048`（欧美）— 重口味高清系列 - Key Events & Decisions: **OpenRouter Free Model Installation & Default Switch**:; Installed three free models: `inclusionai/ling-2.6-1t:free`, `tencent/hy3-preview:free`, `inclusionai/
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L5] User: 你好啊，贾维斯
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L7] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L8] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L9] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L10] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L11] User: 你好啊，贾维斯
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L13] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L14] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L18] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L19] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L20] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L21] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/cf4918cc-871b-4b0b-b958-6cfbea0f7927.jsonl.reset.2026-05-09T12-15-42.830Z#L5] User: 你好啊，贾维斯
+[main/sessions/main/cf4918cc-871b-4b0b-b958-6cfbea0f7927.jsonl.reset.2026-05-09T12-15-42.830Z#L7] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/cf4918cc-871b-4b0b-b958-6cfbea0f7927.jsonl.reset.2026-05-09T12-15-42.830Z#L8] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/cf4918cc-871b-4b0b-b958-6cfbea0f7927.jsonl.reset.2026-05-09T12-15-42.830Z#L9] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/cf4918cc-871b-4b0b-b958-6cfbea0f7927.jsonl.reset.2026-05-09T12-15-42.830Z#L10] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/cf4918cc-871b-4b0b-b958-6cfbea0f7927.jsonl.reset.2026-05-09T12-15-42.830Z#L11] User: 你好啊，贾维斯
+[main/sessions/main/dd80ed24-db19-446d-a708-d94815e71ec5.jsonl#L5] User: Write a dream diary entry from these memory fragments: - - **Device ID**: f5c8454aa8a71df5bd5b19b8b3f35c1e6aaa7ba35313df0fddbd80efdce28e23 ## 目录结构同步 - 根目录文件: IDENTITY.md, USER.md, SOUL.md, TOOLS.md, MEMORY.md, HEARTBEAT.md, AGENTS.md ✓ - 技能目录: skills/ (所有已安装技能) - 记忆系统: m
+[main/sessions/main/dd80ed24-db19-446d-a708-d94815e71ec5.jsonl#L5] User: - 事件: 用户通过 OpenClaw Control UI 发送问候 "你好啊贾维斯" - 状态: 已完成启动流程，读取 SOUL.md、USER.md，检查 memory 目录和今日日志 ## 系统状态 - OpenClaw 版本: 2026.3.23-2 (初始) - 当前时间: Sunday, April 12th, 2026 — 16:52 (Asia/Shanghai) (初始) - 模型: openrouter/nvidia/nemotron-3-super-120b-a12b:free (初始) - 推理模式: 已启用（
+[main/sessions/main/dd80ed24-db19-446d-a708-d94815e71ec5.jsonl#L5] User: 继承的配置 - **身份**: Jarvis (🦞), ghost in the machine, sharp/warm/concise/capable - **用户**: 恒昊（先生），Asia/Shanghai 时区 - **核心原则**: 真正帮忙，不装模作样；有主见；先想办法再提问；用能力赢得信任；尊重隐私 - **文件操作纪律**: 删除必须日志、操作前预览、分块确认、持久会话、全程留痕 - **配置修改红线**: 禁止擅自修改默认值，任何重要变更需用户明确授权 ## 继承的系统状态 - **Gateway**: 127.0
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L28] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L29] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L30] User: 晚上好，贾维斯
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L32] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L33] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L34] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L37] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L42] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L43] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L44] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L45] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L48] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L32] Assistant: 晚上好，先生！看起来刚才出了点小问题，现在一切正常。有需要帮忙的吗？🦞
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L33] User: 微信连接不能使用
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L38] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L39] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L44] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L45] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L46] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L47] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L48] User: 微信连接不能使用
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L50] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L51] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L52] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L24] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L25] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L26] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L27] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L29] User: 晚上好，贾维斯
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L31] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L32] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L33] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L34] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/c7802d1e-8f85-474f-865f-fe44b963ae6d.jsonl.reset.2026-05-09T13-30-52.003Z#L35] User: 晚上好，贾维斯
+[main/sessions/main/38775962-7857-4368-a480-0061702a5e8b.jsonl.reset.2026-05-10T03-00-53.286Z#L49] Assistant: 晚上好！我已经读取了您的SOUL.md和USER.md，了解了您的偏好和当前设置。我也创建了今天的记忆文件并回顾了长期记忆。 我现在准备好帮助您了。您今天需要我协助什么？无论是文件操作、信息查询，还是其他任务，我都会尽力提供真诚的帮助。 您可以直接告诉我您的需求，我会根据我们建立的原则行事：文件操作会使用安全封装，配置修改会寻求授权，并在需要时保持简洁或详尽。
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L53] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L56] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L57] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L58] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L59] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L62] Assistant: 微信连接问题诊断： **核心原因：** - Gateway 只绑定 loopback（127.0.0.1），手机/节点无法连接（Known:0 Connected:0）。 - openclaw-weixin 插件未编译（缺少 dist/index.js），无法正常运行。 **快速修复（假设手机同WiFi）：** 1. 切换到LAN绑定： ``` openclaw config patch gateway.bind lan openclaw gateway rest
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L65] Assistant: 明白了，先生。我来一步步修复微信连接问题（Gateway loopback + 插件未编译）。 **安全预览：** - 改 `gateway.bind=lan`（同WiFi可用） - 编译 weixin 插件（npm build） - 重启 Gateway（短暂中断<10s） - 生成新QR，批准配对 所有改动可回滚，日志全留。
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L68] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L72] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L73] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L74] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L75] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L78] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L79] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L80] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L81] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L84] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L85] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L86] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L88] User: 卸载微信插件
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L90] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L91] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L92] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/5f937d06-db59-405b-b52d-8e86c1eaeb78.jsonl.reset.2026-05-10T03-03-49.632Z#L93] Assistant: [assistant turn failed before producing content]

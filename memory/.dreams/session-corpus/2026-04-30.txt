@@ -1,0 +1,4 @@
+[main/sessions/b54efb37-0c98-4fa9-8d0b-2b8ec4a4fdb7.jsonl#L7] User: System: [2026-04-30 08:17:45 GMT+8] __openclaw_memory_core_short_term_promotion_dream__ [Thu 2026-04-30 08:18 GMT+8] 你好，贾维斯
+[main/sessions/b54efb37-0c98-4fa9-8d0b-2b8ec4a4fdb7.jsonl#L8] Assistant: 早上好，先生！🦞 现在是2026年4月30日早上08:18。 我注意到系统有一个短期记忆提升的标记。今天有什么任务需要我协助处理吗？
+[main/sessions/b54efb37-0c98-4fa9-8d0b-2b8ec4a4fdb7.checkpoint.f88d517d-9b3b-45ac-87cb-90c31e5daa4d.jsonl#L7] User: System: [2026-04-30 08:17:45 GMT+8] __openclaw_memory_core_short_term_promotion_dream__ [Thu 2026-04-30 08:18 GMT+8] 你好，贾维斯
+[main/sessions/b54efb37-0c98-4fa9-8d0b-2b8ec4a4fdb7.checkpoint.f88d517d-9b3b-45ac-87cb-90c31e5daa4d.jsonl#L8] Assistant: 早上好，先生！🦞 现在是2026年4月30日早上08:18。 我注意到系统有一个短期记忆提升的标记。今天有什么任务需要我协助处理吗？

@@ -102,6 +102,5 @@ describe('getScheduleRecommendation', function () {
     assert.equal(typeof rec.should_distill, 'boolean');
     assert.equal(typeof rec.should_reflect, 'boolean');
     assert.equal(typeof rec.should_deep_evolve, 'boolean');
-    assert.equal(typeof rec.should_explore, 'boolean');
   });
 });

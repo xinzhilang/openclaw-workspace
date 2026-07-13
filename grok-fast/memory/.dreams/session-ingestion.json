@@ -1,0 +1,15 @@
+{
+  "version": 3,
+  "files": {
+    "grok-fast:sessions/grok-fast/8f06de03-49e8-4938-a110-19a1a1248e09.jsonl.deleted.2026-05-18T19-01-24.613Z": {
+      "mtimeMs": 1776481690688,
+      "size": 4317,
+      "contentHash": "84606a6fae23cc042c440843e3f968ba5abb33e7d37aae04d374e8b7aaf22c81",
+      "lineCount": 2,
+      "lastContentLine": 2
+    }
+  },
+  "seenMessages": {
+    "grok-fast:8f06de03-49e8-4938-a110-19a1a1248e09": []
+  }
+}
